@@ -1,3 +1,4 @@
+``` Swift
 2022-03-02 10:12:26.828302-0300 LoggerMVP[3742:256250] [register] [🎯 DEBUG]: at main.swift -> View Controller is with debug
 2022-03-02 10:12:26.828744-0300 LoggerMVP[3742:256250] [register] [ℹ️ INFO]: at main.swift -> View Controller is with info
 2022-03-02 10:12:26.828790-0300 LoggerMVP[3742:256250] [register] [⚠️ WARN]: at main.swift -> View Controller is with warn
@@ -250,3 +251,4 @@ message: View Controller is with chat
 2022-03-02 10:12:26.841445-0300 LoggerMVP[3742:256250] [register] 🟢 SUCCESS 🟢 file: main.swift message: View Controller is with success
 2022-03-02 10:12:26.841505-0300 LoggerMVP[3742:256250] [register] 🟠 CRITICAL 🟠 file: main.swift message: View Controller is with critical
 2022-03-02 10:12:26.841561-0300 LoggerMVP[3742:256250] [register] ⚪ CHAT ⚪ file: main.swift message: View Controller is with chat
+```
