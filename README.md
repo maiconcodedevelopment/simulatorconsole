@@ -1,3 +1,20 @@
+### Create console format
+
+You can create your own format to present in the example console: 
+</br>
+----
+note: there is a variable in main.swift that is set as active , to also simulate how I get populated on the console
+ 
+``` Swift
+var formats = ["[%@ %@]: at %@ -> %@","%@ %@ at file: %@ message: %@",
+               "(%@ %@) at file (%@) message (%@)",
+               "\n%@ %@ \nfile: %@ \nmessage: %@",
+               "[%1$@ %2$@ %1$@] file: [%3$@] message: [%4$@]",
+               "%1$@ %2$@ %1$@ file: %3$@ message: %4$@"]
+```
+
+inserting the formatted string into the array, there are some presentation examples
+
 ``` Swift
 2022-03-02 10:12:26.828302-0300 LoggerMVP[3742:256250] [register] [🎯 DEBUG]: at main.swift -> View Controller is with debug
 2022-03-02 10:12:26.828744-0300 LoggerMVP[3742:256250] [register] [ℹ️ INFO]: at main.swift -> View Controller is with info
