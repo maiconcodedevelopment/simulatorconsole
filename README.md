@@ -16,256 +16,368 @@ var formats = ["[%@ %@]: at %@ -> %@","%@ %@ at file: %@ message: %@",
 inserting the formatted string into the array, there are some presentation examples
 
 ``` Swift
-2022-03-02 10:12:26.828302-0300 LoggerMVP[3742:256250] [register] [🎯 DEBUG]: at main.swift -> View Controller is with debug
-2022-03-02 10:12:26.828744-0300 LoggerMVP[3742:256250] [register] [ℹ️ INFO]: at main.swift -> View Controller is with info
-2022-03-02 10:12:26.828790-0300 LoggerMVP[3742:256250] [register] [⚠️ WARN]: at main.swift -> View Controller is with warn
-2022-03-02 10:12:26.828822-0300 LoggerMVP[3742:256250] [register] [❌ ERROR]: at main.swift -> View Controller is with error
-2022-03-02 10:12:26.828852-0300 LoggerMVP[3742:256250] [register] [✅ SUCCESS]: at main.swift -> View Controller is with success
-2022-03-02 10:12:26.828949-0300 LoggerMVP[3742:256250] [register] [💢 CRITICAL]: at main.swift -> View Controller is with critical
-2022-03-02 10:12:26.828979-0300 LoggerMVP[3742:256250] [register] [💬 CHAT]: at main.swift -> View Controller is with chat
-2022-03-02 10:12:26.829011-0300 LoggerMVP[3742:256250] [register] 🎯 DEBUG at file: main.swift message: View Controller is with debug
-2022-03-02 10:12:26.829040-0300 LoggerMVP[3742:256250] [register] ℹ️ INFO at file: main.swift message: View Controller is with info
-2022-03-02 10:12:26.829067-0300 LoggerMVP[3742:256250] [register] ⚠️ WARN at file: main.swift message: View Controller is with warn
-2022-03-02 10:12:26.829094-0300 LoggerMVP[3742:256250] [register] ❌ ERROR at file: main.swift message: View Controller is with error
-2022-03-02 10:12:26.829122-0300 LoggerMVP[3742:256250] [register] ✅ SUCCESS at file: main.swift message: View Controller is with success
-2022-03-02 10:12:26.832615-0300 LoggerMVP[3742:256250] [register] 💢 CRITICAL at file: main.swift message: View Controller is with critical
-2022-03-02 10:12:26.832656-0300 LoggerMVP[3742:256250] [register] 💬 CHAT at file: main.swift message: View Controller is with chat
-2022-03-02 10:12:26.832694-0300 LoggerMVP[3742:256250] [register] (🎯 DEBUG) at file (main.swift) message (View Controller is with debug)
-2022-03-02 10:12:26.832724-0300 LoggerMVP[3742:256250] [register] (ℹ️ INFO) at file (main.swift) message (View Controller is with info)
-2022-03-02 10:12:26.832752-0300 LoggerMVP[3742:256250] [register] (⚠️ WARN) at file (main.swift) message (View Controller is with warn)
-2022-03-02 10:12:26.832780-0300 LoggerMVP[3742:256250] [register] (❌ ERROR) at file (main.swift) message (View Controller is with error)
-2022-03-02 10:12:26.832808-0300 LoggerMVP[3742:256250] [register] (✅ SUCCESS) at file (main.swift) message (View Controller is with success)
-2022-03-02 10:12:26.832836-0300 LoggerMVP[3742:256250] [register] (💢 CRITICAL) at file (main.swift) message (View Controller is with critical)
-2022-03-02 10:12:26.832953-0300 LoggerMVP[3742:256250] [register] (💬 CHAT) at file (main.swift) message (View Controller is with chat)
-2022-03-02 10:12:26.832985-0300 LoggerMVP[3742:256250] [register] 
+2022-03-02 12:11:45.417363-0300 LoggerMVP[4165:297183] [register] [🎯 DEBUG]: at main.swift -> View Controller is with debug
+2022-03-02 12:11:45.417782-0300 LoggerMVP[4165:297183] [register] [ℹ️ INFO]: at main.swift -> View Controller is with info
+2022-03-02 12:11:45.417821-0300 LoggerMVP[4165:297183] [register] [⚠️ WARN]: at main.swift -> View Controller is with warn
+2022-03-02 12:11:45.417852-0300 LoggerMVP[4165:297183] [register] [❌ ERROR]: at main.swift -> View Controller is with error
+2022-03-02 12:11:45.417881-0300 LoggerMVP[4165:297183] [register] [✅ SUCCESS]: at main.swift -> View Controller is with success
+2022-03-02 12:11:45.417978-0300 LoggerMVP[4165:297183] [register] [💢 CRITICAL]: at main.swift -> View Controller is with critical
+2022-03-02 12:11:45.418008-0300 LoggerMVP[4165:297183] [register] [💬 CHAT]: at main.swift -> View Controller is with chat
+2022-03-02 12:11:45.418040-0300 LoggerMVP[4165:297183] [register] 🎯 DEBUG at file: main.swift message: View Controller is with debug
+2022-03-02 12:11:45.418067-0300 LoggerMVP[4165:297183] [register] ℹ️ INFO at file: main.swift message: View Controller is with info
+2022-03-02 12:11:45.418094-0300 LoggerMVP[4165:297183] [register] ⚠️ WARN at file: main.swift message: View Controller is with warn
+2022-03-02 12:11:45.418120-0300 LoggerMVP[4165:297183] [register] ❌ ERROR at file: main.swift message: View Controller is with error
+2022-03-02 12:11:45.418146-0300 LoggerMVP[4165:297183] [register] ✅ SUCCESS at file: main.swift message: View Controller is with success
+2022-03-02 12:11:45.418172-0300 LoggerMVP[4165:297183] [register] 💢 CRITICAL at file: main.swift message: View Controller is with critical
+2022-03-02 12:11:45.421474-0300 LoggerMVP[4165:297183] [register] 💬 CHAT at file: main.swift message: View Controller is with chat
+2022-03-02 12:11:45.421519-0300 LoggerMVP[4165:297183] [register] (🎯 DEBUG) at file (main.swift) message (View Controller is with debug)
+2022-03-02 12:11:45.421550-0300 LoggerMVP[4165:297183] [register] (ℹ️ INFO) at file (main.swift) message (View Controller is with info)
+2022-03-02 12:11:45.421580-0300 LoggerMVP[4165:297183] [register] (⚠️ WARN) at file (main.swift) message (View Controller is with warn)
+2022-03-02 12:11:45.421608-0300 LoggerMVP[4165:297183] [register] (❌ ERROR) at file (main.swift) message (View Controller is with error)
+2022-03-02 12:11:45.421635-0300 LoggerMVP[4165:297183] [register] (✅ SUCCESS) at file (main.swift) message (View Controller is with success)
+2022-03-02 12:11:45.421662-0300 LoggerMVP[4165:297183] [register] (💢 CRITICAL) at file (main.swift) message (View Controller is with critical)
+2022-03-02 12:11:45.421924-0300 LoggerMVP[4165:297183] [register] (💬 CHAT) at file (main.swift) message (View Controller is with chat)
+2022-03-02 12:11:45.421965-0300 LoggerMVP[4165:297183] [register] 
 🎯 DEBUG 
 file: main.swift 
 message: View Controller is with debug
-2022-03-02 10:12:26.833012-0300 LoggerMVP[3742:256250] [register] 
+2022-03-02 12:11:45.421995-0300 LoggerMVP[4165:297183] [register] 
 ℹ️ INFO 
 file: main.swift 
 message: View Controller is with info
-2022-03-02 10:12:26.833039-0300 LoggerMVP[3742:256250] [register] 
+2022-03-02 12:11:45.422022-0300 LoggerMVP[4165:297183] [register] 
 ⚠️ WARN 
 file: main.swift 
 message: View Controller is with warn
-2022-03-02 10:12:26.833066-0300 LoggerMVP[3742:256250] [register] 
+2022-03-02 12:11:45.422055-0300 LoggerMVP[4165:297183] [register] 
 ❌ ERROR 
 file: main.swift 
 message: View Controller is with error
-2022-03-02 10:12:26.833092-0300 LoggerMVP[3742:256250] [register] 
+2022-03-02 12:11:45.422083-0300 LoggerMVP[4165:297183] [register] 
 ✅ SUCCESS 
 file: main.swift 
 message: View Controller is with success
-2022-03-02 10:12:26.833187-0300 LoggerMVP[3742:256250] [register] 
+2022-03-02 12:11:45.422110-0300 LoggerMVP[4165:297183] [register] 
 💢 CRITICAL 
 file: main.swift 
 message: View Controller is with critical
-2022-03-02 10:12:26.833234-0300 LoggerMVP[3742:256250] [register] 
+2022-03-02 12:11:45.422137-0300 LoggerMVP[4165:297183] [register] 
 💬 CHAT 
 file: main.swift 
 message: View Controller is with chat
-2022-03-02 10:12:26.833276-0300 LoggerMVP[3742:256250] [register] [🎯 DEBUG 🎯] file: [main.swift] message: [View Controller is with debug]
-2022-03-02 10:12:26.833347-0300 LoggerMVP[3742:256250] [register] [ℹ️ INFO ℹ️] file: [main.swift] message: [View Controller is with info]
-2022-03-02 10:12:26.833395-0300 LoggerMVP[3742:256250] [register] [⚠️ WARN ⚠️] file: [main.swift] message: [View Controller is with warn]
-2022-03-02 10:12:26.833446-0300 LoggerMVP[3742:256250] [register] [❌ ERROR ❌] file: [main.swift] message: [View Controller is with error]
-2022-03-02 10:12:26.833509-0300 LoggerMVP[3742:256250] [register] [✅ SUCCESS ✅] file: [main.swift] message: [View Controller is with success]
-2022-03-02 10:12:26.833568-0300 LoggerMVP[3742:256250] [register] [💢 CRITICAL 💢] file: [main.swift] message: [View Controller is with critical]
-2022-03-02 10:12:26.833627-0300 LoggerMVP[3742:256250] [register] [💬 CHAT 💬] file: [main.swift] message: [View Controller is with chat]
-2022-03-02 10:12:26.833712-0300 LoggerMVP[3742:256250] [register] 🎯 DEBUG 🎯 file: main.swift message: View Controller is with debug
-2022-03-02 10:12:26.833748-0300 LoggerMVP[3742:256250] [register] ℹ️ INFO ℹ️ file: main.swift message: View Controller is with info
-2022-03-02 10:12:26.833803-0300 LoggerMVP[3742:256250] [register] ⚠️ WARN ⚠️ file: main.swift message: View Controller is with warn
-2022-03-02 10:12:26.833867-0300 LoggerMVP[3742:256250] [register] ❌ ERROR ❌ file: main.swift message: View Controller is with error
-2022-03-02 10:12:26.833949-0300 LoggerMVP[3742:256250] [register] ✅ SUCCESS ✅ file: main.swift message: View Controller is with success
-2022-03-02 10:12:26.834011-0300 LoggerMVP[3742:256250] [register] 💢 CRITICAL 💢 file: main.swift message: View Controller is with critical
-2022-03-02 10:12:26.834077-0300 LoggerMVP[3742:256250] [register] 💬 CHAT 💬 file: main.swift message: View Controller is with chat
-2022-03-02 10:12:26.834113-0300 LoggerMVP[3742:256250] [register] [🟪 DEBUG]: at main.swift -> View Controller is with debug
-2022-03-02 10:12:26.834142-0300 LoggerMVP[3742:256250] [register] [🟦 INFO]: at main.swift -> View Controller is with info
-2022-03-02 10:12:26.834187-0300 LoggerMVP[3742:256250] [register] [🟨 WARN]: at main.swift -> View Controller is with warn
-2022-03-02 10:12:26.834244-0300 LoggerMVP[3742:256250] [register] [🟥 ERROR]: at main.swift -> View Controller is with error
-2022-03-02 10:12:26.834304-0300 LoggerMVP[3742:256250] [register] [🟩 SUCCESS]: at main.swift -> View Controller is with success
-2022-03-02 10:12:26.834368-0300 LoggerMVP[3742:256250] [register] [🟧 CRITICAL]: at main.swift -> View Controller is with critical
-2022-03-02 10:12:26.834434-0300 LoggerMVP[3742:256250] [register] [⬜ CHAT]: at main.swift -> View Controller is with chat
-2022-03-02 10:12:26.834495-0300 LoggerMVP[3742:256250] [register] 🟪 DEBUG at file: main.swift message: View Controller is with debug
-2022-03-02 10:12:26.834531-0300 LoggerMVP[3742:256250] [register] 🟦 INFO at file: main.swift message: View Controller is with info
-2022-03-02 10:12:26.834628-0300 LoggerMVP[3742:256250] [register] 🟨 WARN at file: main.swift message: View Controller is with warn
-2022-03-02 10:12:26.834657-0300 LoggerMVP[3742:256250] [register] 🟥 ERROR at file: main.swift message: View Controller is with error
-2022-03-02 10:12:26.834720-0300 LoggerMVP[3742:256250] [register] 🟩 SUCCESS at file: main.swift message: View Controller is with success
-2022-03-02 10:12:26.834782-0300 LoggerMVP[3742:256250] [register] 🟧 CRITICAL at file: main.swift message: View Controller is with critical
-2022-03-02 10:12:26.834813-0300 LoggerMVP[3742:256250] [register] ⬜ CHAT at file: main.swift message: View Controller is with chat
-2022-03-02 10:12:26.834906-0300 LoggerMVP[3742:256250] [register] (🟪 DEBUG) at file (main.swift) message (View Controller is with debug)
-2022-03-02 10:12:26.834938-0300 LoggerMVP[3742:256250] [register] (🟦 INFO) at file (main.swift) message (View Controller is with info)
-2022-03-02 10:12:26.835042-0300 LoggerMVP[3742:256250] [register] (🟨 WARN) at file (main.swift) message (View Controller is with warn)
-2022-03-02 10:12:26.835072-0300 LoggerMVP[3742:256250] [register] (🟥 ERROR) at file (main.swift) message (View Controller is with error)
-2022-03-02 10:12:26.835126-0300 LoggerMVP[3742:256250] [register] (🟩 SUCCESS) at file (main.swift) message (View Controller is with success)
-2022-03-02 10:12:26.835188-0300 LoggerMVP[3742:256250] [register] (🟧 CRITICAL) at file (main.swift) message (View Controller is with critical)
-2022-03-02 10:12:26.835226-0300 LoggerMVP[3742:256250] [register] (⬜ CHAT) at file (main.swift) message (View Controller is with chat)
-2022-03-02 10:12:26.835296-0300 LoggerMVP[3742:256250] [register] 
+2022-03-02 12:11:45.422167-0300 LoggerMVP[4165:297183] [register] [🎯 DEBUG 🎯] file: [main.swift] message: [View Controller is with debug]
+2022-03-02 12:11:45.422227-0300 LoggerMVP[4165:297183] [register] [ℹ️ INFO ℹ️] file: [main.swift] message: [View Controller is with info]
+2022-03-02 12:11:45.422272-0300 LoggerMVP[4165:297183] [register] [⚠️ WARN ⚠️] file: [main.swift] message: [View Controller is with warn]
+2022-03-02 12:11:45.422305-0300 LoggerMVP[4165:297183] [register] [❌ ERROR ❌] file: [main.swift] message: [View Controller is with error]
+2022-03-02 12:11:45.422335-0300 LoggerMVP[4165:297183] [register] [✅ SUCCESS ✅] file: [main.swift] message: [View Controller is with success]
+2022-03-02 12:11:45.422404-0300 LoggerMVP[4165:297183] [register] [💢 CRITICAL 💢] file: [main.swift] message: [View Controller is with critical]
+2022-03-02 12:11:45.422437-0300 LoggerMVP[4165:297183] [register] [💬 CHAT 💬] file: [main.swift] message: [View Controller is with chat]
+2022-03-02 12:11:45.422510-0300 LoggerMVP[4165:297183] [register] 🎯 DEBUG 🎯 file: main.swift message: View Controller is with debug
+2022-03-02 12:11:45.422573-0300 LoggerMVP[4165:297183] [register] ℹ️ INFO ℹ️ file: main.swift message: View Controller is with info
+2022-03-02 12:11:45.422631-0300 LoggerMVP[4165:297183] [register] ⚠️ WARN ⚠️ file: main.swift message: View Controller is with warn
+2022-03-02 12:11:45.422689-0300 LoggerMVP[4165:297183] [register] ❌ ERROR ❌ file: main.swift message: View Controller is with error
+2022-03-02 12:11:45.422730-0300 LoggerMVP[4165:297183] [register] ✅ SUCCESS ✅ file: main.swift message: View Controller is with success
+2022-03-02 12:11:45.422798-0300 LoggerMVP[4165:297183] [register] 💢 CRITICAL 💢 file: main.swift message: View Controller is with critical
+2022-03-02 12:11:45.422872-0300 LoggerMVP[4165:297183] [register] 💬 CHAT 💬 file: main.swift message: View Controller is with chat
+2022-03-02 12:11:45.422907-0300 LoggerMVP[4165:297183] [register] 
+🎯 DEBUG 🎯 
+file: main.swift 
+message View Controller is with debug
+2022-03-02 12:11:45.422984-0300 LoggerMVP[4165:297183] [register] 
+ℹ️ INFO ℹ️ 
+file: main.swift 
+message View Controller is with info
+2022-03-02 12:11:45.423092-0300 LoggerMVP[4165:297183] [register] 
+⚠️ WARN ⚠️ 
+file: main.swift 
+message View Controller is with warn
+2022-03-02 12:11:45.423124-0300 LoggerMVP[4165:297183] [register] 
+❌ ERROR ❌ 
+file: main.swift 
+message View Controller is with error
+2022-03-02 12:11:45.423155-0300 LoggerMVP[4165:297183] [register] 
+✅ SUCCESS ✅ 
+file: main.swift 
+message View Controller is with success
+2022-03-02 12:11:45.423183-0300 LoggerMVP[4165:297183] [register] 
+💢 CRITICAL 💢 
+file: main.swift 
+message View Controller is with critical
+2022-03-02 12:11:45.423250-0300 LoggerMVP[4165:297183] [register] 
+💬 CHAT 💬 
+file: main.swift 
+message View Controller is with chat
+2022-03-02 12:11:45.423338-0300 LoggerMVP[4165:297183] [register] [🟪 DEBUG]: at main.swift -> View Controller is with debug
+2022-03-02 12:11:45.423375-0300 LoggerMVP[4165:297183] [register] [🟦 INFO]: at main.swift -> View Controller is with info
+2022-03-02 12:11:45.423404-0300 LoggerMVP[4165:297183] [register] [🟨 WARN]: at main.swift -> View Controller is with warn
+2022-03-02 12:11:45.423489-0300 LoggerMVP[4165:297183] [register] [🟥 ERROR]: at main.swift -> View Controller is with error
+2022-03-02 12:11:45.423518-0300 LoggerMVP[4165:297183] [register] [🟩 SUCCESS]: at main.swift -> View Controller is with success
+2022-03-02 12:11:45.423596-0300 LoggerMVP[4165:297183] [register] [🟧 CRITICAL]: at main.swift -> View Controller is with critical
+2022-03-02 12:11:45.423642-0300 LoggerMVP[4165:297183] [register] [⬜ CHAT]: at main.swift -> View Controller is with chat
+2022-03-02 12:11:45.423705-0300 LoggerMVP[4165:297183] [register] 🟪 DEBUG at file: main.swift message: View Controller is with debug
+2022-03-02 12:11:45.423763-0300 LoggerMVP[4165:297183] [register] 🟦 INFO at file: main.swift message: View Controller is with info
+2022-03-02 12:11:45.423814-0300 LoggerMVP[4165:297183] [register] 🟨 WARN at file: main.swift message: View Controller is with warn
+2022-03-02 12:11:45.423878-0300 LoggerMVP[4165:297183] [register] 🟥 ERROR at file: main.swift message: View Controller is with error
+2022-03-02 12:11:45.423933-0300 LoggerMVP[4165:297183] [register] 🟩 SUCCESS at file: main.swift message: View Controller is with success
+2022-03-02 12:11:45.424006-0300 LoggerMVP[4165:297183] [register] 🟧 CRITICAL at file: main.swift message: View Controller is with critical
+2022-03-02 12:11:45.424063-0300 LoggerMVP[4165:297183] [register] ⬜ CHAT at file: main.swift message: View Controller is with chat
+2022-03-02 12:11:45.424126-0300 LoggerMVP[4165:297183] [register] (🟪 DEBUG) at file (main.swift) message (View Controller is with debug)
+2022-03-02 12:11:45.424200-0300 LoggerMVP[4165:297183] [register] (🟦 INFO) at file (main.swift) message (View Controller is with info)
+2022-03-02 12:11:45.424233-0300 LoggerMVP[4165:297183] [register] (🟨 WARN) at file (main.swift) message (View Controller is with warn)
+2022-03-02 12:11:45.424290-0300 LoggerMVP[4165:297183] [register] (🟥 ERROR) at file (main.swift) message (View Controller is with error)
+2022-03-02 12:11:45.424357-0300 LoggerMVP[4165:297183] [register] (🟩 SUCCESS) at file (main.swift) message (View Controller is with success)
+2022-03-02 12:11:45.424451-0300 LoggerMVP[4165:297183] [register] (🟧 CRITICAL) at file (main.swift) message (View Controller is with critical)
+2022-03-02 12:11:45.424481-0300 LoggerMVP[4165:297183] [register] (⬜ CHAT) at file (main.swift) message (View Controller is with chat)
+2022-03-02 12:11:45.424512-0300 LoggerMVP[4165:297183] [register] 
 🟪 DEBUG 
 file: main.swift 
 message: View Controller is with debug
-2022-03-02 10:12:26.835365-0300 LoggerMVP[3742:256250] [register] 
+2022-03-02 12:11:45.424578-0300 LoggerMVP[4165:297183] [register] 
 🟦 INFO 
 file: main.swift 
 message: View Controller is with info
-2022-03-02 10:12:26.835424-0300 LoggerMVP[3742:256250] [register] 
+2022-03-02 12:11:45.424644-0300 LoggerMVP[4165:297183] [register] 
 🟨 WARN 
 file: main.swift 
 message: View Controller is with warn
-2022-03-02 10:12:26.835458-0300 LoggerMVP[3742:256250] [register] 
+2022-03-02 12:11:45.424686-0300 LoggerMVP[4165:297183] [register] 
 🟥 ERROR 
 file: main.swift 
 message: View Controller is with error
-2022-03-02 10:12:26.835586-0300 LoggerMVP[3742:256250] [register] 
+2022-03-02 12:11:45.424749-0300 LoggerMVP[4165:297183] [register] 
 🟩 SUCCESS 
 file: main.swift 
 message: View Controller is with success
-2022-03-02 10:12:26.835616-0300 LoggerMVP[3742:256250] [register] 
+2022-03-02 12:11:45.424793-0300 LoggerMVP[4165:297183] [register] 
 🟧 CRITICAL 
 file: main.swift 
 message: View Controller is with critical
-2022-03-02 10:12:26.835711-0300 LoggerMVP[3742:256250] [register] 
+2022-03-02 12:11:45.424852-0300 LoggerMVP[4165:297183] [register] 
 ⬜ CHAT 
 file: main.swift 
 message: View Controller is with chat
-2022-03-02 10:12:26.835745-0300 LoggerMVP[3742:256250] [register] [🟪 DEBUG 🟪] file: [main.swift] message: [View Controller is with debug]
-2022-03-02 10:12:26.835773-0300 LoggerMVP[3742:256250] [register] [🟦 INFO 🟦] file: [main.swift] message: [View Controller is with info]
-2022-03-02 10:12:26.835802-0300 LoggerMVP[3742:256250] [register] [🟨 WARN 🟨] file: [main.swift] message: [View Controller is with warn]
-2022-03-02 10:12:26.835910-0300 LoggerMVP[3742:256250] [register] [🟥 ERROR 🟥] file: [main.swift] message: [View Controller is with error]
-2022-03-02 10:12:26.835940-0300 LoggerMVP[3742:256250] [register] [🟩 SUCCESS 🟩] file: [main.swift] message: [View Controller is with success]
-2022-03-02 10:12:26.835972-0300 LoggerMVP[3742:256250] [register] [🟧 CRITICAL 🟧] file: [main.swift] message: [View Controller is with critical]
-2022-03-02 10:12:26.836040-0300 LoggerMVP[3742:256250] [register] [⬜ CHAT ⬜] file: [main.swift] message: [View Controller is with chat]
-2022-03-02 10:12:26.836077-0300 LoggerMVP[3742:256250] [register] 🟪 DEBUG 🟪 file: main.swift message: View Controller is with debug
-2022-03-02 10:12:26.836154-0300 LoggerMVP[3742:256250] [register] 🟦 INFO 🟦 file: main.swift message: View Controller is with info
-2022-03-02 10:12:26.836257-0300 LoggerMVP[3742:256250] [register] 🟨 WARN 🟨 file: main.swift message: View Controller is with warn
-2022-03-02 10:12:26.836355-0300 LoggerMVP[3742:256250] [register] 🟥 ERROR 🟥 file: main.swift message: View Controller is with error
-2022-03-02 10:12:26.836384-0300 LoggerMVP[3742:256250] [register] 🟩 SUCCESS 🟩 file: main.swift message: View Controller is with success
-2022-03-02 10:12:26.836412-0300 LoggerMVP[3742:256250] [register] 🟧 CRITICAL 🟧 file: main.swift message: View Controller is with critical
-2022-03-02 10:12:26.836440-0300 LoggerMVP[3742:256250] [register] ⬜ CHAT ⬜ file: main.swift message: View Controller is with chat
-2022-03-02 10:12:26.836470-0300 LoggerMVP[3742:256250] [register] [🐛 DEBUG]: at main.swift -> View Controller is with debug
-2022-03-02 10:12:26.836547-0300 LoggerMVP[3742:256250] [register] [ℹ️ INFO]: at main.swift -> View Controller is with info
-2022-03-02 10:12:26.836576-0300 LoggerMVP[3742:256250] [register] [⚠️ WARN]: at main.swift -> View Controller is with warn
-2022-03-02 10:12:26.836681-0300 LoggerMVP[3742:256250] [register] [🔥 ERROR]: at main.swift -> View Controller is with error
-2022-03-02 10:12:26.836713-0300 LoggerMVP[3742:256250] [register] [📖 SUCCESS]: at main.swift -> View Controller is with success
-2022-03-02 10:12:26.836742-0300 LoggerMVP[3742:256250] [register] [⚡ CRITICAL]: at main.swift -> View Controller is with critical
-2022-03-02 10:12:26.836824-0300 LoggerMVP[3742:256250] [register] [🗣️ CHAT]: at main.swift -> View Controller is with chat
-2022-03-02 10:12:26.836874-0300 LoggerMVP[3742:256250] [register] 🐛 DEBUG at file: main.swift message: View Controller is with debug
-2022-03-02 10:12:26.836904-0300 LoggerMVP[3742:256250] [register] ℹ️ INFO at file: main.swift message: View Controller is with info
-2022-03-02 10:12:26.836966-0300 LoggerMVP[3742:256250] [register] ⚠️ WARN at file: main.swift message: View Controller is with warn
-2022-03-02 10:12:26.837041-0300 LoggerMVP[3742:256250] [register] 🔥 ERROR at file: main.swift message: View Controller is with error
-2022-03-02 10:12:26.837101-0300 LoggerMVP[3742:256250] [register] 📖 SUCCESS at file: main.swift message: View Controller is with success
-2022-03-02 10:12:26.837142-0300 LoggerMVP[3742:256250] [register] ⚡ CRITICAL at file: main.swift message: View Controller is with critical
-2022-03-02 10:12:26.837203-0300 LoggerMVP[3742:256250] [register] 🗣️ CHAT at file: main.swift message: View Controller is with chat
-2022-03-02 10:12:26.837287-0300 LoggerMVP[3742:256250] [register] (🐛 DEBUG) at file (main.swift) message (View Controller is with debug)
-2022-03-02 10:12:26.837319-0300 LoggerMVP[3742:256250] [register] (ℹ️ INFO) at file (main.swift) message (View Controller is with info)
-2022-03-02 10:12:26.837394-0300 LoggerMVP[3742:256250] [register] (⚠️ WARN) at file (main.swift) message (View Controller is with warn)
-2022-03-02 10:12:26.837457-0300 LoggerMVP[3742:256250] [register] (🔥 ERROR) at file (main.swift) message (View Controller is with error)
-2022-03-02 10:12:26.837524-0300 LoggerMVP[3742:256250] [register] (📖 SUCCESS) at file (main.swift) message (View Controller is with success)
-2022-03-02 10:12:26.837622-0300 LoggerMVP[3742:256250] [register] (⚡ CRITICAL) at file (main.swift) message (View Controller is with critical)
-2022-03-02 10:12:26.837651-0300 LoggerMVP[3742:256250] [register] (🗣️ CHAT) at file (main.swift) message (View Controller is with chat)
-2022-03-02 10:12:26.837718-0300 LoggerMVP[3742:256250] [register] 
+2022-03-02 12:11:45.424942-0300 LoggerMVP[4165:297183] [register] [🟪 DEBUG 🟪] file: [main.swift] message: [View Controller is with debug]
+2022-03-02 12:11:45.424973-0300 LoggerMVP[4165:297183] [register] [🟦 INFO 🟦] file: [main.swift] message: [View Controller is with info]
+2022-03-02 12:11:45.425056-0300 LoggerMVP[4165:297183] [register] [🟨 WARN 🟨] file: [main.swift] message: [View Controller is with warn]
+2022-03-02 12:11:45.425086-0300 LoggerMVP[4165:297183] [register] [🟥 ERROR 🟥] file: [main.swift] message: [View Controller is with error]
+2022-03-02 12:11:45.425126-0300 LoggerMVP[4165:297183] [register] [🟩 SUCCESS 🟩] file: [main.swift] message: [View Controller is with success]
+2022-03-02 12:11:45.425190-0300 LoggerMVP[4165:297183] [register] [🟧 CRITICAL 🟧] file: [main.swift] message: [View Controller is with critical]
+2022-03-02 12:11:45.425255-0300 LoggerMVP[4165:297183] [register] [⬜ CHAT ⬜] file: [main.swift] message: [View Controller is with chat]
+2022-03-02 12:11:45.425292-0300 LoggerMVP[4165:297183] [register] 🟪 DEBUG 🟪 file: main.swift message: View Controller is with debug
+2022-03-02 12:11:45.425406-0300 LoggerMVP[4165:297183] [register] 🟦 INFO 🟦 file: main.swift message: View Controller is with info
+2022-03-02 12:11:45.425437-0300 LoggerMVP[4165:297183] [register] 🟨 WARN 🟨 file: main.swift message: View Controller is with warn
+2022-03-02 12:11:45.425478-0300 LoggerMVP[4165:297183] [register] 🟥 ERROR 🟥 file: main.swift message: View Controller is with error
+2022-03-02 12:11:45.425535-0300 LoggerMVP[4165:297183] [register] 🟩 SUCCESS 🟩 file: main.swift message: View Controller is with success
+2022-03-02 12:11:45.425587-0300 LoggerMVP[4165:297183] [register] 🟧 CRITICAL 🟧 file: main.swift message: View Controller is with critical
+2022-03-02 12:11:45.425660-0300 LoggerMVP[4165:297183] [register] ⬜ CHAT ⬜ file: main.swift message: View Controller is with chat
+2022-03-02 12:11:45.425693-0300 LoggerMVP[4165:297183] [register] 
+🟪 DEBUG 🟪 
+file: main.swift 
+message View Controller is with debug
+2022-03-02 12:11:45.425763-0300 LoggerMVP[4165:297183] [register] 
+🟦 INFO 🟦 
+file: main.swift 
+message View Controller is with info
+2022-03-02 12:11:45.425830-0300 LoggerMVP[4165:297183] [register] 
+🟨 WARN 🟨 
+file: main.swift 
+message View Controller is with warn
+2022-03-02 12:11:45.425888-0300 LoggerMVP[4165:297183] [register] 
+🟥 ERROR 🟥 
+file: main.swift 
+message View Controller is with error
+2022-03-02 12:11:45.425940-0300 LoggerMVP[4165:297183] [register] 
+🟩 SUCCESS 🟩 
+file: main.swift 
+message View Controller is with success
+2022-03-02 12:11:45.426000-0300 LoggerMVP[4165:297183] [register] 
+🟧 CRITICAL 🟧 
+file: main.swift 
+message View Controller is with critical
+2022-03-02 12:11:45.426056-0300 LoggerMVP[4165:297183] [register] 
+⬜ CHAT ⬜ 
+file: main.swift 
+message View Controller is with chat
+2022-03-02 12:11:45.426125-0300 LoggerMVP[4165:297183] [register] [🐛 DEBUG]: at main.swift -> View Controller is with debug
+2022-03-02 12:11:45.426172-0300 LoggerMVP[4165:297183] [register] [ℹ️ INFO]: at main.swift -> View Controller is with info
+2022-03-02 12:11:45.426227-0300 LoggerMVP[4165:297183] [register] [⚠️ WARN]: at main.swift -> View Controller is with warn
+2022-03-02 12:11:45.426260-0300 LoggerMVP[4165:297183] [register] [🔥 ERROR]: at main.swift -> View Controller is with error
+2022-03-02 12:11:45.426325-0300 LoggerMVP[4165:297183] [register] [📖 SUCCESS]: at main.swift -> View Controller is with success
+2022-03-02 12:11:45.426400-0300 LoggerMVP[4165:297183] [register] [⚡ CRITICAL]: at main.swift -> View Controller is with critical
+2022-03-02 12:11:45.426441-0300 LoggerMVP[4165:297183] [register] [🗣️ CHAT]: at main.swift -> View Controller is with chat
+2022-03-02 12:11:45.426514-0300 LoggerMVP[4165:297183] [register] 🐛 DEBUG at file: main.swift message: View Controller is with debug
+2022-03-02 12:11:45.426561-0300 LoggerMVP[4165:297183] [register] ℹ️ INFO at file: main.swift message: View Controller is with info
+2022-03-02 12:11:45.426626-0300 LoggerMVP[4165:297183] [register] ⚠️ WARN at file: main.swift message: View Controller is with warn
+2022-03-02 12:11:45.426660-0300 LoggerMVP[4165:297183] [register] 🔥 ERROR at file: main.swift message: View Controller is with error
+2022-03-02 12:11:45.426746-0300 LoggerMVP[4165:297183] [register] 📖 SUCCESS at file: main.swift message: View Controller is with success
+2022-03-02 12:11:45.426841-0300 LoggerMVP[4165:297183] [register] ⚡ CRITICAL at file: main.swift message: View Controller is with critical
+2022-03-02 12:11:45.426871-0300 LoggerMVP[4165:297183] [register] 🗣️ CHAT at file: main.swift message: View Controller is with chat
+2022-03-02 12:11:45.426901-0300 LoggerMVP[4165:297183] [register] (🐛 DEBUG) at file (main.swift) message (View Controller is with debug)
+2022-03-02 12:11:45.426950-0300 LoggerMVP[4165:297183] [register] (ℹ️ INFO) at file (main.swift) message (View Controller is with info)
+2022-03-02 12:11:45.427017-0300 LoggerMVP[4165:297183] [register] (⚠️ WARN) at file (main.swift) message (View Controller is with warn)
+2022-03-02 12:11:45.427075-0300 LoggerMVP[4165:297183] [register] (🔥 ERROR) at file (main.swift) message (View Controller is with error)
+2022-03-02 12:11:45.427135-0300 LoggerMVP[4165:297183] [register] (📖 SUCCESS) at file (main.swift) message (View Controller is with success)
+2022-03-02 12:11:45.427166-0300 LoggerMVP[4165:297183] [register] (⚡ CRITICAL) at file (main.swift) message (View Controller is with critical)
+2022-03-02 12:11:45.427237-0300 LoggerMVP[4165:297183] [register] (🗣️ CHAT) at file (main.swift) message (View Controller is with chat)
+2022-03-02 12:11:45.427309-0300 LoggerMVP[4165:297183] [register] 
 🐛 DEBUG 
 file: main.swift 
 message: View Controller is with debug
-2022-03-02 10:12:26.837773-0300 LoggerMVP[3742:256250] [register] 
+2022-03-02 12:11:45.427348-0300 LoggerMVP[4165:297183] [register] 
 ℹ️ INFO 
 file: main.swift 
 message: View Controller is with info
-2022-03-02 10:12:26.837837-0300 LoggerMVP[3742:256250] [register] 
+2022-03-02 12:11:45.427422-0300 LoggerMVP[4165:297183] [register] 
 ⚠️ WARN 
 file: main.swift 
 message: View Controller is with warn
-2022-03-02 10:12:26.837873-0300 LoggerMVP[3742:256250] [register] 
+2022-03-02 12:11:45.427454-0300 LoggerMVP[4165:297183] [register] 
 🔥 ERROR 
 file: main.swift 
 message: View Controller is with error
-2022-03-02 10:12:26.837942-0300 LoggerMVP[3742:256250] [register] 
+2022-03-02 12:11:45.427525-0300 LoggerMVP[4165:297183] [register] 
 📖 SUCCESS 
 file: main.swift 
 message: View Controller is with success
-2022-03-02 10:12:26.838030-0300 LoggerMVP[3742:256250] [register] 
+2022-03-02 12:11:45.427618-0300 LoggerMVP[4165:297183] [register] 
 ⚡ CRITICAL 
 file: main.swift 
 message: View Controller is with critical
-2022-03-02 10:12:26.838060-0300 LoggerMVP[3742:256250] [register] 
+2022-03-02 12:11:45.427683-0300 LoggerMVP[4165:297183] [register] 
 🗣️ CHAT 
 file: main.swift 
 message: View Controller is with chat
-2022-03-02 10:12:26.838117-0300 LoggerMVP[3742:256250] [register] [🐛 DEBUG 🐛] file: [main.swift] message: [View Controller is with debug]
-2022-03-02 10:12:26.838180-0300 LoggerMVP[3742:256250] [register] [ℹ️ INFO ℹ️] file: [main.swift] message: [View Controller is with info]
-2022-03-02 10:12:26.838246-0300 LoggerMVP[3742:256250] [register] [⚠️ WARN ⚠️] file: [main.swift] message: [View Controller is with warn]
-2022-03-02 10:12:26.838292-0300 LoggerMVP[3742:256250] [register] [🔥 ERROR 🔥] file: [main.swift] message: [View Controller is with error]
-2022-03-02 10:12:26.838354-0300 LoggerMVP[3742:256250] [register] [📖 SUCCESS 📖] file: [main.swift] message: [View Controller is with success]
-2022-03-02 10:12:26.838415-0300 LoggerMVP[3742:256250] [register] [⚡ CRITICAL ⚡] file: [main.swift] message: [View Controller is with critical]
-2022-03-02 10:12:26.838477-0300 LoggerMVP[3742:256250] [register] [🗣️ CHAT 🗣️] file: [main.swift] message: [View Controller is with chat]
-2022-03-02 10:12:26.838537-0300 LoggerMVP[3742:256250] [register] 🐛 DEBUG 🐛 file: main.swift message: View Controller is with debug
-2022-03-02 10:12:26.838605-0300 LoggerMVP[3742:256250] [register] ℹ️ INFO ℹ️ file: main.swift message: View Controller is with info
-2022-03-02 10:12:26.838761-0300 LoggerMVP[3742:256250] [register] ⚠️ WARN ⚠️ file: main.swift message: View Controller is with warn
-2022-03-02 10:12:26.838790-0300 LoggerMVP[3742:256250] [register] 🔥 ERROR 🔥 file: main.swift message: View Controller is with error
-2022-03-02 10:12:26.838882-0300 LoggerMVP[3742:256250] [register] 📖 SUCCESS 📖 file: main.swift message: View Controller is with success
-2022-03-02 10:12:26.838989-0300 LoggerMVP[3742:256250] [register] ⚡ CRITICAL ⚡ file: main.swift message: View Controller is with critical
-2022-03-02 10:12:26.839102-0300 LoggerMVP[3742:256250] [register] 🗣️ CHAT 🗣️ file: main.swift message: View Controller is with chat
-2022-03-02 10:12:26.839136-0300 LoggerMVP[3742:256250] [register] [🟣 DEBUG]: at main.swift -> View Controller is with debug
-2022-03-02 10:12:26.839164-0300 LoggerMVP[3742:256250] [register] [🔵 INFO]: at main.swift -> View Controller is with info
-2022-03-02 10:12:26.839242-0300 LoggerMVP[3742:256250] [register] [🟡 WARN]: at main.swift -> View Controller is with warn
-2022-03-02 10:12:26.839280-0300 LoggerMVP[3742:256250] [register] [🔴 ERROR]: at main.swift -> View Controller is with error
-2022-03-02 10:12:26.839307-0300 LoggerMVP[3742:256250] [register] [🟢 SUCCESS]: at main.swift -> View Controller is with success
-2022-03-02 10:12:26.839359-0300 LoggerMVP[3742:256250] [register] [🟠 CRITICAL]: at main.swift -> View Controller is with critical
-2022-03-02 10:12:26.839389-0300 LoggerMVP[3742:256250] [register] [⚪ CHAT]: at main.swift -> View Controller is with chat
-2022-03-02 10:12:26.839490-0300 LoggerMVP[3742:256250] [register] 🟣 DEBUG at file: main.swift message: View Controller is with debug
-2022-03-02 10:12:26.839556-0300 LoggerMVP[3742:256250] [register] 🔵 INFO at file: main.swift message: View Controller is with info
-2022-03-02 10:12:26.839624-0300 LoggerMVP[3742:256250] [register] 🟡 WARN at file: main.swift message: View Controller is with warn
-2022-03-02 10:12:26.839655-0300 LoggerMVP[3742:256250] [register] 🔴 ERROR at file: main.swift message: View Controller is with error
-2022-03-02 10:12:26.839722-0300 LoggerMVP[3742:256250] [register] 🟢 SUCCESS at file: main.swift message: View Controller is with success
-2022-03-02 10:12:26.839798-0300 LoggerMVP[3742:256250] [register] 🟠 CRITICAL at file: main.swift message: View Controller is with critical
-2022-03-02 10:12:26.839828-0300 LoggerMVP[3742:256250] [register] ⚪ CHAT at file: main.swift message: View Controller is with chat
-2022-03-02 10:12:26.839909-0300 LoggerMVP[3742:256250] [register] (🟣 DEBUG) at file (main.swift) message (View Controller is with debug)
-2022-03-02 10:12:26.839939-0300 LoggerMVP[3742:256250] [register] (🔵 INFO) at file (main.swift) message (View Controller is with info)
-2022-03-02 10:12:26.840003-0300 LoggerMVP[3742:256250] [register] (🟡 WARN) at file (main.swift) message (View Controller is with warn)
-2022-03-02 10:12:26.840063-0300 LoggerMVP[3742:256250] [register] (🔴 ERROR) at file (main.swift) message (View Controller is with error)
-2022-03-02 10:12:26.840125-0300 LoggerMVP[3742:256250] [register] (🟢 SUCCESS) at file (main.swift) message (View Controller is with success)
-2022-03-02 10:12:26.840200-0300 LoggerMVP[3742:256250] [register] (🟠 CRITICAL) at file (main.swift) message (View Controller is with critical)
-2022-03-02 10:12:26.840257-0300 LoggerMVP[3742:256250] [register] (⚪ CHAT) at file (main.swift) message (View Controller is with chat)
-2022-03-02 10:12:26.840344-0300 LoggerMVP[3742:256250] [register] 
+2022-03-02 12:11:45.427798-0300 LoggerMVP[4165:297183] [register] [🐛 DEBUG 🐛] file: [main.swift] message: [View Controller is with debug]
+2022-03-02 12:11:45.427849-0300 LoggerMVP[4165:297183] [register] [ℹ️ INFO ℹ️] file: [main.swift] message: [View Controller is with info]
+2022-03-02 12:11:45.428027-0300 LoggerMVP[4165:297183] [register] [⚠️ WARN ⚠️] file: [main.swift] message: [View Controller is with warn]
+2022-03-02 12:11:45.428058-0300 LoggerMVP[4165:297183] [register] [🔥 ERROR 🔥] file: [main.swift] message: [View Controller is with error]
+2022-03-02 12:11:45.428085-0300 LoggerMVP[4165:297183] [register] [📖 SUCCESS 📖] file: [main.swift] message: [View Controller is with success]
+2022-03-02 12:11:45.428117-0300 LoggerMVP[4165:297183] [register] [⚡ CRITICAL ⚡] file: [main.swift] message: [View Controller is with critical]
+2022-03-02 12:11:45.428178-0300 LoggerMVP[4165:297183] [register] [🗣️ CHAT 🗣️] file: [main.swift] message: [View Controller is with chat]
+2022-03-02 12:11:45.428209-0300 LoggerMVP[4165:297183] [register] 🐛 DEBUG 🐛 file: main.swift message: View Controller is with debug
+2022-03-02 12:11:45.428238-0300 LoggerMVP[4165:297183] [register] ℹ️ INFO ℹ️ file: main.swift message: View Controller is with info
+2022-03-02 12:11:45.428318-0300 LoggerMVP[4165:297183] [register] ⚠️ WARN ⚠️ file: main.swift message: View Controller is with warn
+2022-03-02 12:11:45.428352-0300 LoggerMVP[4165:297183] [register] 🔥 ERROR 🔥 file: main.swift message: View Controller is with error
+2022-03-02 12:11:45.428428-0300 LoggerMVP[4165:297183] [register] 📖 SUCCESS 📖 file: main.swift message: View Controller is with success
+2022-03-02 12:11:45.428478-0300 LoggerMVP[4165:297183] [register] ⚡ CRITICAL ⚡ file: main.swift message: View Controller is with critical
+2022-03-02 12:11:45.428557-0300 LoggerMVP[4165:297183] [register] 🗣️ CHAT 🗣️ file: main.swift message: View Controller is with chat
+2022-03-02 12:11:45.428595-0300 LoggerMVP[4165:297183] [register] 
+🐛 DEBUG 🐛 
+file: main.swift 
+message View Controller is with debug
+2022-03-02 12:11:45.428666-0300 LoggerMVP[4165:297183] [register] 
+ℹ️ INFO ℹ️ 
+file: main.swift 
+message View Controller is with info
+2022-03-02 12:11:45.428715-0300 LoggerMVP[4165:297183] [register] 
+⚠️ WARN ⚠️ 
+file: main.swift 
+message View Controller is with warn
+2022-03-02 12:11:45.428761-0300 LoggerMVP[4165:297183] [register] 
+🔥 ERROR 🔥 
+file: main.swift 
+message View Controller is with error
+2022-03-02 12:11:45.428855-0300 LoggerMVP[4165:297183] [register] 
+📖 SUCCESS 📖 
+file: main.swift 
+message View Controller is with success
+2022-03-02 12:11:45.428891-0300 LoggerMVP[4165:297183] [register] 
+⚡ CRITICAL ⚡ 
+file: main.swift 
+message View Controller is with critical
+2022-03-02 12:11:45.428949-0300 LoggerMVP[4165:297183] [register] 
+🗣️ CHAT 🗣️ 
+file: main.swift 
+message View Controller is with chat
+2022-03-02 12:11:45.429003-0300 LoggerMVP[4165:297183] [register] [🟣 DEBUG]: at main.swift -> View Controller is with debug
+2022-03-02 12:11:45.429091-0300 LoggerMVP[4165:297183] [register] [🔵 INFO]: at main.swift -> View Controller is with info
+2022-03-02 12:11:45.429176-0300 LoggerMVP[4165:297183] [register] [🟡 WARN]: at main.swift -> View Controller is with warn
+2022-03-02 12:11:45.429307-0300 LoggerMVP[4165:297183] [register] [🔴 ERROR]: at main.swift -> View Controller is with error
+2022-03-02 12:11:45.429337-0300 LoggerMVP[4165:297183] [register] [🟢 SUCCESS]: at main.swift -> View Controller is with success
+2022-03-02 12:11:45.429388-0300 LoggerMVP[4165:297183] [register] [🟠 CRITICAL]: at main.swift -> View Controller is with critical
+2022-03-02 12:11:45.429457-0300 LoggerMVP[4165:297183] [register] [⚪ CHAT]: at main.swift -> View Controller is with chat
+2022-03-02 12:11:45.429513-0300 LoggerMVP[4165:297183] [register] 🟣 DEBUG at file: main.swift message: View Controller is with debug
+2022-03-02 12:11:45.429581-0300 LoggerMVP[4165:297183] [register] 🔵 INFO at file: main.swift message: View Controller is with info
+2022-03-02 12:11:45.429639-0300 LoggerMVP[4165:297183] [register] 🟡 WARN at file: main.swift message: View Controller is with warn
+2022-03-02 12:11:45.429695-0300 LoggerMVP[4165:297183] [register] 🔴 ERROR at file: main.swift message: View Controller is with error
+2022-03-02 12:11:45.429758-0300 LoggerMVP[4165:297183] [register] 🟢 SUCCESS at file: main.swift message: View Controller is with success
+2022-03-02 12:11:45.429794-0300 LoggerMVP[4165:297183] [register] 🟠 CRITICAL at file: main.swift message: View Controller is with critical
+2022-03-02 12:11:45.429861-0300 LoggerMVP[4165:297183] [register] ⚪ CHAT at file: main.swift message: View Controller is with chat
+2022-03-02 12:11:45.429920-0300 LoggerMVP[4165:297183] [register] (🟣 DEBUG) at file (main.swift) message (View Controller is with debug)
+2022-03-02 12:11:45.429973-0300 LoggerMVP[4165:297183] [register] (🔵 INFO) at file (main.swift) message (View Controller is with info)
+2022-03-02 12:11:45.430027-0300 LoggerMVP[4165:297183] [register] (🟡 WARN) at file (main.swift) message (View Controller is with warn)
+2022-03-02 12:11:45.430131-0300 LoggerMVP[4165:297183] [register] (🔴 ERROR) at file (main.swift) message (View Controller is with error)
+2022-03-02 12:11:45.430161-0300 LoggerMVP[4165:297183] [register] (🟢 SUCCESS) at file (main.swift) message (View Controller is with success)
+2022-03-02 12:11:45.430212-0300 LoggerMVP[4165:297183] [register] (🟠 CRITICAL) at file (main.swift) message (View Controller is with critical)
+2022-03-02 12:11:45.430274-0300 LoggerMVP[4165:297183] [register] (⚪ CHAT) at file (main.swift) message (View Controller is with chat)
+2022-03-02 12:11:45.430312-0300 LoggerMVP[4165:297183] [register] 
 🟣 DEBUG 
 file: main.swift 
 message: View Controller is with debug
-2022-03-02 10:12:26.840434-0300 LoggerMVP[3742:256250] [register] 
+2022-03-02 12:11:45.430374-0300 LoggerMVP[4165:297183] [register] 
 🔵 INFO 
 file: main.swift 
 message: View Controller is with info
-2022-03-02 10:12:26.840488-0300 LoggerMVP[3742:256250] [register] 
+2022-03-02 12:11:45.430435-0300 LoggerMVP[4165:297183] [register] 
 🟡 WARN 
 file: main.swift 
 message: View Controller is with warn
-2022-03-02 10:12:26.840554-0300 LoggerMVP[3742:256250] [register] 
+2022-03-02 12:11:45.430494-0300 LoggerMVP[4165:297183] [register] 
 🔴 ERROR 
 file: main.swift 
 message: View Controller is with error
-2022-03-02 10:12:26.840612-0300 LoggerMVP[3742:256250] [register] 
+2022-03-02 12:11:45.430544-0300 LoggerMVP[4165:297183] [register] 
 🟢 SUCCESS 
 file: main.swift 
 message: View Controller is with success
-2022-03-02 10:12:26.840735-0300 LoggerMVP[3742:256250] [register] 
+2022-03-02 12:11:45.430617-0300 LoggerMVP[4165:297183] [register] 
 🟠 CRITICAL 
 file: main.swift 
 message: View Controller is with critical
-2022-03-02 10:12:26.840780-0300 LoggerMVP[3742:256250] [register] 
+2022-03-02 12:11:45.430653-0300 LoggerMVP[4165:297183] [register] 
 ⚪ CHAT 
 file: main.swift 
 message: View Controller is with chat
-2022-03-02 10:12:26.840816-0300 LoggerMVP[3742:256250] [register] [🟣 DEBUG 🟣] file: [main.swift] message: [View Controller is with debug]
-2022-03-02 10:12:26.840895-0300 LoggerMVP[3742:256250] [register] [🔵 INFO 🔵] file: [main.swift] message: [View Controller is with info]
-2022-03-02 10:12:26.840926-0300 LoggerMVP[3742:256250] [register] [🟡 WARN 🟡] file: [main.swift] message: [View Controller is with warn]
-2022-03-02 10:12:26.840997-0300 LoggerMVP[3742:256250] [register] [🔴 ERROR 🔴] file: [main.swift] message: [View Controller is with error]
-2022-03-02 10:12:26.841031-0300 LoggerMVP[3742:256250] [register] [🟢 SUCCESS 🟢] file: [main.swift] message: [View Controller is with success]
-2022-03-02 10:12:26.841087-0300 LoggerMVP[3742:256250] [register] [🟠 CRITICAL 🟠] file: [main.swift] message: [View Controller is with critical]
-2022-03-02 10:12:26.841138-0300 LoggerMVP[3742:256250] [register] [⚪ CHAT ⚪] file: [main.swift] message: [View Controller is with chat]
-2022-03-02 10:12:26.841206-0300 LoggerMVP[3742:256250] [register] 🟣 DEBUG 🟣 file: main.swift message: View Controller is with debug
-2022-03-02 10:12:26.841286-0300 LoggerMVP[3742:256250] [register] 🔵 INFO 🔵 file: main.swift message: View Controller is with info
-2022-03-02 10:12:26.841328-0300 LoggerMVP[3742:256250] [register] 🟡 WARN 🟡 file: main.swift message: View Controller is with warn
-2022-03-02 10:12:26.841381-0300 LoggerMVP[3742:256250] [register] 🔴 ERROR 🔴 file: main.swift message: View Controller is with error
-2022-03-02 10:12:26.841445-0300 LoggerMVP[3742:256250] [register] 🟢 SUCCESS 🟢 file: main.swift message: View Controller is with success
-2022-03-02 10:12:26.841505-0300 LoggerMVP[3742:256250] [register] 🟠 CRITICAL 🟠 file: main.swift message: View Controller is with critical
-2022-03-02 10:12:26.841561-0300 LoggerMVP[3742:256250] [register] ⚪ CHAT ⚪ file: main.swift message: View Controller is with chat
+2022-03-02 12:11:45.430732-0300 LoggerMVP[4165:297183] [register] [🟣 DEBUG 🟣] file: [main.swift] message: [View Controller is with debug]
+2022-03-02 12:11:45.430766-0300 LoggerMVP[4165:297183] [register] [🔵 INFO 🔵] file: [main.swift] message: [View Controller is with info]
+2022-03-02 12:11:45.430844-0300 LoggerMVP[4165:297183] [register] [🟡 WARN 🟡] file: [main.swift] message: [View Controller is with warn]
+2022-03-02 12:11:45.430875-0300 LoggerMVP[4165:297183] [register] [🔴 ERROR 🔴] file: [main.swift] message: [View Controller is with error]
+2022-03-02 12:11:45.430951-0300 LoggerMVP[4165:297183] [register] [🟢 SUCCESS 🟢] file: [main.swift] message: [View Controller is with success]
+2022-03-02 12:11:45.431038-0300 LoggerMVP[4165:297183] [register] [🟠 CRITICAL 🟠] file: [main.swift] message: [View Controller is with critical]
+2022-03-02 12:11:45.431068-0300 LoggerMVP[4165:297183] [register] [⚪ CHAT ⚪] file: [main.swift] message: [View Controller is with chat]
+2022-03-02 12:11:45.431125-0300 LoggerMVP[4165:297183] [register] 🟣 DEBUG 🟣 file: main.swift message: View Controller is with debug
+2022-03-02 12:11:45.431182-0300 LoggerMVP[4165:297183] [register] 🔵 INFO 🔵 file: main.swift message: View Controller is with info
+2022-03-02 12:11:45.431212-0300 LoggerMVP[4165:297183] [register] 🟡 WARN 🟡 file: main.swift message: View Controller is with warn
+2022-03-02 12:11:45.431287-0300 LoggerMVP[4165:297183] [register] 🔴 ERROR 🔴 file: main.swift message: View Controller is with error
+2022-03-02 12:11:45.431318-0300 LoggerMVP[4165:297183] [register] 🟢 SUCCESS 🟢 file: main.swift message: View Controller is with success
+2022-03-02 12:11:45.431387-0300 LoggerMVP[4165:297183] [register] 🟠 CRITICAL 🟠 file: main.swift message: View Controller is with critical
+2022-03-02 12:11:45.431451-0300 LoggerMVP[4165:297183] [register] ⚪ CHAT ⚪ file: main.swift message: View Controller is with chat
+2022-03-02 12:11:45.431521-0300 LoggerMVP[4165:297183] [register] 
+🟣 DEBUG 🟣 
+file: main.swift 
+message View Controller is with debug
+2022-03-02 12:11:45.431630-0300 LoggerMVP[4165:297183] [register] 
+🔵 INFO 🔵 
+file: main.swift 
+message View Controller is with info
+2022-03-02 12:11:45.431660-0300 LoggerMVP[4165:297183] [register] 
+🟡 WARN 🟡 
+file: main.swift 
+message View Controller is with warn
+2022-03-02 12:11:45.431693-0300 LoggerMVP[4165:297183] [register] 
+🔴 ERROR 🔴 
+file: main.swift 
+message View Controller is with error
+2022-03-02 12:11:45.431780-0300 LoggerMVP[4165:297183] [register] 
+🟢 SUCCESS 🟢 
+file: main.swift 
+message View Controller is with success
+2022-03-02 12:11:45.431849-0300 LoggerMVP[4165:297183] [register] 
+🟠 CRITICAL 🟠 
+file: main.swift 
+message View Controller is with critical
+2022-03-02 12:11:45.431883-0300 LoggerMVP[4165:297183] [register] 
+⚪ CHAT ⚪ 
+file: main.swift 
+message View Controller is with chat
 ```
